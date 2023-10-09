@@ -1,0 +1,46 @@
+{
+  "items": [
+    {
+      "title": " Management",
+      "details": "Our professional event management service ensures a seamless and memorable experience for your special occasions. From planning and coordination to execution, we handle every aspect to create the perfect event. Let us bring your vision to life and make your event a truly remarkable one.",
+      "price": 25.99,
+      "btn": "Buy Now",
+      "img": "https://i.ibb.co/YLk4ns8/event.jpg"
+    },
+    {
+      "title": "Catering Service",
+      "details": "Indulge your guests with our exceptional catering service. We offer a delectable menu tailored to your preferences, ensuring your event is a culinary delight. Our experienced chefs and staff will take care of every culinary detail, leaving you free to savor the moment and enjoy the company of your guests.",
+      "price": 15.49,
+      "btn": "Buy Now",
+      "img": "https://i.ibb.co/smbHSTS/catering-service.jpg"
+    },
+    {
+      "title": "Venue Rental",
+      "details": "Host your event in style with our versatile venue rental options. Whether it's a small gathering or a grand celebration, our venues are equipped to meet your needs. Choose from a variety of settings to create the perfect ambiance for your event. Book our venues now and make your event unforgettable.",
+      "price": 39.99,
+      "btn": "Buy Now",
+      "img": "https://i.ibb.co/JdGD4Qd/venue.jpg"
+    },
+    {
+      "title": "Childcare Service",
+      "details": "Our childcare service provides a safe and nurturing environment for your child while you attend to your responsibilities. Our experienced caregivers ensure your child's comfort, engage them in educational activities, and promote their well-being. Enjoy peace of mind knowing your child is in capable hands.",
+      "price": 29.99,
+      "btn": "Buy Now",
+      "img": "https://i.ibb.co/9VfctrQ/chilren-service.jpg"
+    },
+    {
+      "title": "Bakery and Cake Services",
+      "details": "Satisfy your sweet cravings with our bakery and cake services. We offer a wide range of delicious baked goods and custom cakes for all occasions. Our talented bakers create mouthwatering treats that will delight your taste buds. Order now to add a sweet touch to your event.",
+      "price": 99.99,
+      "btn": "Buy Now",
+      "img": "https://i.ibb.co/qngBQk3/cake.jpg"
+    },
+    {
+      "title": "Photography and Videography",
+      "details": "Capture every precious moment with our photography and videography services. Our skilled photographers and videographers specialize in documenting events and creating lasting memories. Let us tell your story through stunning visuals and relive the magic of your special moments.",
+      "price": 12.95,
+      "btn": "Buy Now",
+      "img": "https://i.ibb.co/J2cc6sf/photography.jpg"
+    }
+  ]
+}
