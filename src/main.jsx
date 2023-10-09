@@ -22,6 +22,7 @@ import AuthProvider from './assets/AuthProvider/AuthProvider';
 import PrivateRoute from './privateroute/PrivateRoute';
 import Blog from './Pages/Blog/Blog';
 import About from './Pages/Blog/About/About';
+import Details from './Component/Detalis/Details';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -33,8 +34,9 @@ const router = createBrowserRouter([
         element: <Banner></Banner>
       },
       {
-        path:'/service',
-        element:<Services></Services>
+        path: '/service',
+        element: <Services></Services>,
+        loader: () => fetch('/data.json'),
       },
       {
         path:'/location',
@@ -59,7 +61,12 @@ const router = createBrowserRouter([
       {
         path:'/about',
         element:<PrivateRoute><About></About></PrivateRoute>
-      }
+      },
+      // {
+      //   path:'/details/:id',
+      //   element:<Details></Details>,
+      //   loader:()=>fetch('/data.json')
+      // }
     ]
   },
   
