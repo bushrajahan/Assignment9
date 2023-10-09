@@ -62,11 +62,11 @@ const router = createBrowserRouter([
         path:'/about',
         element:<PrivateRoute><About></About></PrivateRoute>
       },
-      // {
-      //   path:'/details/:id',
-      //   element:<Details></Details>,
-      //   loader:()=>fetch('/data.json')
-      // }
+      {
+        path:'/details/:id',
+        element:<Details></Details>,
+        loader:()=>fetch('/data.json')
+      }
     ]
   },
   

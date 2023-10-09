@@ -12,7 +12,7 @@ const Service = ({data}) => {
   <div className="card-body">
        <p className='card-title text-white'>{title}</p>
     <div className="card-actions justify-end">
-      <button className="btn btn-primary">Details
+      <button className="btn btn-primary" onClick={()=>navigate(`/details/${id}`)}>Details
       
       
       </button>
