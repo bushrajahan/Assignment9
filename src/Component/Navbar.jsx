@@ -1,77 +1,126 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../assets/AuthProvider/AuthProvider';
+import Profile from './Profile/Profile';
+
 const Navbar = () => {
-const {user} = useContext(AuthContext)
+  const { user } = useContext(AuthContext);
+  const [isOpen, setIsOpen] = useState(false);
 
   const customStyle = {
-    
-    fontWeight: 'bold',  
-    fontFamily:'Comic Neue ,cursive',
-    padding:'10px',
-    color:'#262f71',
-    fontSize:'20px'
-    
+    fontWeight: 'bold',
+    fontFamily: 'Comic Neue, cursive',
+    padding: '10px',
+    color: '#262f71',
+    fontSize: '20px',
   };
-  const navLink = <>
 
-<NavLink
-  to="/" style={customStyle}
-  className={({ isActive }) =>
-     isActive ? ' border-b-2 border-pink-400  '  : ""
+  const navLink = (
+    <>
+      <NavLink
+        to="/"
+        style={customStyle}
+        activeClassName="border-b-2 border-pink-400"
+      >
+        Home
+      </NavLink>
 
-  }>Home</NavLink>
-  
-  
-<NavLink style={customStyle}
-  to="/banner"
-  className={({ isActive }) =>
-     isActive ? ' border-b-2 border-pink-400  font-custom font-bold '  : ""
+      <NavLink
+        to="/banner"
+        style={customStyle}
+        activeClassName="border-b-2 border-pink-400 font-custom font-bold"
+      >
+        Features
+      </NavLink>
 
-  }>Features</NavLink>
+      <NavLink
+        to="/service"
+        style={customStyle}
+        activeClassName="border-b-2 border-pink-400 font-custom font-bold"
+      >
+        Services
+      </NavLink>
 
-<NavLink style={customStyle}
-  to="/service"
-  className={({ isActive }) =>
-     isActive ? ' border-b-2 border-pink-400  font-custom font-bold '  : ""
+      <NavLink
+        to="/Location"
+        style={customStyle}
+        activeClassName="border-b-2 border-pink-400 font-custom font-bold"
+      >
+        Contact US
+      </NavLink>
 
-  }>Services</NavLink>
-  
-<NavLink style={customStyle}
-  to="/Location"
-  className={({ isActive }) =>
-     isActive ? ' border-b-2 border-pink-400  font-custom font-bold '  : ""
+      <NavLink
+        to="/testimonial"
+        style={customStyle}
+        activeClassName="border-b-2 border-pink-400 font-custom font-bold"
+      >
+        Testimonial
+      </NavLink>
+      <NavLink
+        to="/blog"
+        style={customStyle}
+        activeClassName="border-b-2 border-pink-400 font-custom font-bold"
+      >
+        Blog
+      </NavLink>
+      <NavLink
+        to="/about"
+        style={customStyle}
+        activeClassName="border-b-2 border-pink-400 font-custom font-bold"
+      >
+        About
+      </NavLink>
+    </>
+  );
 
-  }>Contact US</NavLink>
-
-  </>
   return (
     <div>
-      <div className="navbar bg-base-100 ">
-  <div className="navbar-start ">
-    <div className="dropdown">
-      <label tabIndex={0} className="btn btn-ghost lg:hidden">
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-      </label>
-      <ul tabIndex={0} className="menu menu-sm dropdown-content font-custom-400 mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-      {navLink}
-
-      </ul>
-    </div>
-    <img src="/public/logo.webp" alt="" />
-  </div>
-  <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1">
-     {navLink}
-
-    </ul>
-  </div>
-  <div className="navbar-end">
-    <NavLink to="/login" className="btn bg-[#262f71] text-white capitalize">Login</NavLink>
-  </div>
-</div>
+      <nav className="bg-base-100">
+        <div className="mx-auto px-4">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="flex items-center">
+              <img src="/public/logo.webp" alt="" className="" />
+              <div className=" flex flex-col md:flex-row  items-center w-auto space-x-4">
+                {navLink}
+             <div className='lg:hidden'>
+            
+                {user ?
+                <Profile user={user}></Profile>:
+                <NavLink
+                to="/login"
+                style={customStyle}
+                activeClassName="border-b-2 border-pink-400 font-custom font-bold"
+              >
+                Login
+              </NavLink>
+                
+                }
+             </div>
+              </div>
+            </div>
+       
+            <div
+                  
+            >
+              <div className="hidden lg:block">
+         
+                
+                {user ? <Profile user={user}></Profile>:
+                
+                <NavLink
+                to="/login"
+                style={customStyle}
+                activeClassName="border-b-2 border-pink-400 font-custom font-bold"
+              >
+                  Login
+                </NavLink>
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
     </div>
   );
 };
-
 export default Navbar;

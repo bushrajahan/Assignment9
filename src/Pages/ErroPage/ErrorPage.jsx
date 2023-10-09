@@ -5,11 +5,12 @@ export default function ErrorPage() {
   console.error(error);
 
   return (
-    <div id="error-page">
+    <div id="error-page" className="flex justify-center items-center">
       <h1>Oops!</h1>
-      <p>Sorry, an unexpected error has occurred.</p>
+      <h1>404!! NOT Found</h1>
       <p>
         <i>{error.statusText || error.message}</i>
+        
       </p>
     </div>
   );

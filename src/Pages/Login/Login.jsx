@@ -38,7 +38,7 @@ const Login = () => {
     <div>
         <div className="hero-content flex-col " >
    
-   <div className="card bg-indigo-800 text-white flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+   <div className="card bg-indigo-800 text-white flex-shrink-0 w-full md:max-w-sm shadow-2xl bg-base-100">
      <form className="card-body  " onSubmit={handleSubmit}>
        <div className="form-control">
          <label className="label">
@@ -57,8 +57,9 @@ const Login = () => {
        </div>
        <div className="form-control mt-6">
        <button className="btn bg-white text-indigo-800 text-xl font-bold">Login</button>
-       <button className="btn my-2 bg-white text-indigo-800 text-xl font-bold"  onClick={handleClick}>Sign in with Google</button>
 
+       <button className="btn my-2 bg-white text-indigo-800 text-xl font-bold"  onClick={handleClick}>Sign in with Google</button>
+         
        </div>
        <h2 className='p-4'>New here <Link className='border-b-2 border-pink-400 text-xl' to="/register">Register</Link></h2>
 
