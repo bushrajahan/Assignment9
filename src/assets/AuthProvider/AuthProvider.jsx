@@ -1,10 +1,12 @@
-import React, { createContext } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import auth from '../../config/firebase.config';
-import { GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
+import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
+import { useAsyncError } from 'react-router-dom';
 
 export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
+  const [user,setUser] = useState(null)
   // Create user
   const createUser = (email, password) => {
     return createUserWithEmailAndPassword(auth,email,password)
@@ -21,12 +23,20 @@ const AuthProvider = ({ children }) => {
    const googleSignIn = () =>{
     return signInWithPopup(auth,provider);
    }
-
+  useEffect(()=>{
+    const unSubscribe=  onAuthStateChanged(auth, (user) => {
+      setUser(user)
+    });
+    return()=>{
+      unSubscribe();
+    }
+  },[])
 
   const authValue = {
     createUser,
     signIn,
-    googleSignIn
+    googleSignIn,
+    user
   };
 
   return (
