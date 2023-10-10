@@ -35,10 +35,10 @@ const Login = () => {
   }
 
   return (
-    <div>
-        <div className="hero-content flex-col " >
+
+        <div className="hero-content z-20 flex-col mt-56 " >
    
-   <div className="card bg-indigo-800 text-white flex-shrink-0 w-full md:max-w-sm shadow-2xl bg-base-100">
+   <div className="card bg-indigo-800 text-white  md:max-w-sm ">
      <form className="card-body  " onSubmit={handleSubmit}>
        <div className="form-control">
          <label className="label">
@@ -66,7 +66,7 @@ const Login = () => {
      </form>
    </div>
  </div>
-    </div>
+    
   );
 };
 

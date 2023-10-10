@@ -1,34 +1,29 @@
-import React, { useState } from 'react';
 import { FaArrowRightLong } from "react-icons/fa6";
-import { Navigate, useNavigate } from 'react-router-dom';
-const Banner = () => {
-const navigate = useNavigate();
+import { useNavigate } from "react-router-dom";
 
+
+const Banner = () => {
+  const navigate = useNavigate()
+  const handleShow =() =>{
+    navigate('/service')
+  }
   return (
-    <div>
-      <div className="carousel w-full mt-10">
-        <div
-          id="slide1"
-          className={`carousel-item relative w-full  `}
-        >
-          <img src="/public/girlboy.jpeg" alt="Slide 1" className="w-full" />
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-           
-          </div>
-          <div className="carousel-text absolute text-white top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
-            <h1 className='text-blue-800  font-bold text-2xl'> welcome to happy Baby.</h1>
-            <p className='text-blue-800  font-bold text-2xl'>we arrange baby shower party</p>
-         
-            <button className="btn bg-blue-800 text-white mt-4 hover:bg-blue-800" onClick={()=>navigate('/service')}>
-  Services
-  <FaArrowRightLong></FaArrowRightLong>
-</button>
-          </div>
-        </div> 
-       
-      </div>
+    <div className="bg-blue-800">
+      <div className="hero   mx-auto min-h-screen " style={{backgroundImage:'url("https://i.ibb.co/1z7rW56/girlboy.jpg")'}}>
+  <div className="hero-overlay   opacity-0"></div>
+  <div className="hero-content  text-center text-neutral-content">
+    <div className="max-w-md">
+      <h1 className="mb-5 text-5xl font-bold font-custom text-blue-600">Welcome to happy Baby </h1>
+      <p className="mb-5  text-blue-800">we organize baby shower party </p>
+      <button onClick={handleShow}  className ="btn bg-blue-800 text-white mt-4 hover:bg-blue-800"
+         >Services
+        <FaArrowRightLong></FaArrowRightLong>
+      </button>
     </div>
-  );
+  </div>
+</div>
+    </div>
+  )
 };
 
 export default Banner;

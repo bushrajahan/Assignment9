@@ -29,7 +29,7 @@ const Register = () => {
   }
   return (
     <div>
-          <div className="hero-content flex-col ">
+          <div className="hero-content flex-col mt-40">
    
    <div className="card bg-indigo-800 text-white flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
      <form className="card-body  " onSubmit={handleClick}>

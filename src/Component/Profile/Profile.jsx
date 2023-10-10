@@ -1,56 +1,22 @@
-import React, { useContext, useState } from 'react';
-import { CgProfile } from 'react-icons/cg';
-import AuthProvider, { AuthContext } from '../../assets/AuthProvider/AuthProvider';
+import React from 'react';
+import { useContext } from 'react';
+import { AuthContext } from '../../assets/AuthProvider/AuthProvider';
+const Profile = () => {
 
-const Profile = (user) => {
-  const {LogOut} = useContext(AuthContext)
-const handleClick = () =>{
-    LogOut();
+const {user,LogOut} = useContext(AuthContext)
+ const {displayName,email} = user;
+ const handleClick = () =>{
+  LogOut();
 }
-
-
-  const { email, photoURL, displayName } = user.user;
-  const [showCard, setShowCard] = useState(false);
-
   return (
     <div>
-      <div className="relative" onClick={() => setShowCard(!showCard)}>
-        {photoURL ? (
-          <div>
-            <img src={photoURL} className="w-10 rounded-full" />
-          </div>
-        ) : (
-          <CgProfile />
-        )}
-      </div>
-      {showCard && (
-        <div className="card absolute shadow-xl">
-          <figure>
-            <img src={photoURL} alt="Profile" className="w-full" />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">{displayName}</h2>
-            <p>{email}</p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-primary w-full" onClick={handleClick}>LogOut</button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      <style>
-        {`
-          @media (max-width: 768px) {
-            /* Add responsive styles here for smaller screens */
-            .card {
-              /* Example responsive styling */
-              max-width: 80%;
-              left: 50%;
-              transform: translateX(-50%);
-            }
-          }
-        `}
-      </style>
+     <div className="dropdown lg:dropdown-end md:dropdown-bottom">
+  <label tabIndex={0} className="btn m-1">{displayName}</label>
+  <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box ">
+    <li><a>{email}</a></li>
+    <li><btn onClick={handleClick}>Logout</btn></li>
+  </ul>
+</div>
     </div>
   );
 };

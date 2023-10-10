@@ -30,13 +30,13 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children:[
       {
-        path:'/banner',
-        element: <Banner></Banner>
+        path:'/',
+        element: <Home></Home>
       },
       {
         path: '/service',
         element: <Services></Services>,
-        loader: () => fetch('/data.json'),
+       
       },
       {
         path:'/location',
@@ -44,7 +44,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/testimonial',
-        element:<Testimonial></Testimonial>
+        element:<PrivateRoute><Testimonial></Testimonial></PrivateRoute>
       },
       {
         path:'/login',

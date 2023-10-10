@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import AuthProvider, { AuthContext } from '../assets/AuthProvider/AuthProvider';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import Login from '../Pages/Login/Login';
 
 const PrivateRoute = ({children}) => {
   const navigate = useNavigate();
@@ -9,8 +10,8 @@ const PrivateRoute = ({children}) => {
   if(loading){
     <span className="loading loading-spinner loading-lg"></span>
   }
-  if(!user?.email){
-    return navigate('/login')
+  if(!user){
+    return <Login></Login>
   }
   return children;
 };
