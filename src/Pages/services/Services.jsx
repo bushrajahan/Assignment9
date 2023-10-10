@@ -33,15 +33,20 @@ const Services = () => {
      
 
    
+        <div className='flex justify-center items-center'>
+          <div>
+            
+          </div>
         {data?.items?.length > 3 && !click &&
           <button
-            className="btn bg-blue-800 text-white mt-4 hover:bg-blue-800"
+            className="btn bg-blue-800 text-white m-4 hover:bg-blue-800"
             onClick={showAll}
           >
             Show More
             <FaArrowRightLong />
           </button>
         }
+        </div>
       
     </div>
     </div>

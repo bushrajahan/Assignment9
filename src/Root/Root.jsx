@@ -7,7 +7,7 @@ import Services from '../Pages/services/Services';
 
 const Root = () => {
   return (
-    <div className='max-w-6xl mx-auto '>
+    <div className='max-w-6xl mx-auto lg:max-w-full '>
       
         <Navbar></Navbar>
         <Outlet></Outlet>
